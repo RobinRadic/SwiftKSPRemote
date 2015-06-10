@@ -1,0 +1,12 @@
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\obj\Debug\SKRApi.csprojResolveAssemblyReference.cache
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\SKRApi.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\SKRApi.pdb
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\obj\Debug\SKRApi.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\obj\Debug\SKRApi.pdb
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\PluginData\SKRApi.version
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\Thrift.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\SwiftKSPRemote.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\PluginData\icon_applauncher_36.png
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\PluginData\SwiftKSPRemote.version
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\SwiftKSPRemote.pdb
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SKRApi\bin\Debug\Thrift.pdb

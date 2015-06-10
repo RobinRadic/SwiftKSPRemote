@@ -1,0 +1,9 @@
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\obj\Debug\SwiftTest.csprojResolveAssemblyReference.cache
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\obj\Debug\SwiftTest.Properties.Resources.resources
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\obj\Debug\SwiftTest.csproj.GenerateResource.Cache
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\bin\Debug\SwiftTest.exe.config
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\bin\Debug\SwiftTest.exe
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\bin\Debug\SwiftTest.pdb
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\bin\Debug\Thrift.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\obj\Debug\SwiftTest.exe
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\SwiftTest\obj\Debug\SwiftTest.pdb
