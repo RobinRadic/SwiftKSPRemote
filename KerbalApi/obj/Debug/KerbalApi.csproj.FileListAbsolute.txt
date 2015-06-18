@@ -1,0 +1,6 @@
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalApi\bin\Debug\PluginData\KerbalApi.version
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalApi\bin\Debug\KerbalApi.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalApi\bin\Debug\KerbalApi.pdb
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalApi\obj\Debug\KerbalApi.csprojResolveAssemblyReference.cache
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalApi\obj\Debug\KerbalApi.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalApi\obj\Debug\KerbalApi.pdb

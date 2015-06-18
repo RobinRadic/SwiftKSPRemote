@@ -1,8 +1,7 @@
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\Thrift.dll
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\Thrift.pdb
-C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\obj\Debug\Thrift.dll
-C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\obj\Debug\Thrift.pdb
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\Assembly-CSharp.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\System.Web.dll
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\UnityEngine.dll
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\System.Xml.dll
@@ -12,3 +11,5 @@ C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\Mono.Cecil.dll
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\Mono.Security.dll
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\Assembly-CSharp.xml
 C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\bin\Debug\UnityEngine.xml
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\obj\Debug\Thrift.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Thrift\obj\Debug\Thrift.pdb

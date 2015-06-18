@@ -1,0 +1,11 @@
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\bin\Debug\KerbalDebug.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\bin\Debug\KerbalDebug.pdb
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\bin\Debug\Assembly-CSharp.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\bin\Debug\Mono.CSharp.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\bin\Debug\UnityEngine.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\bin\Debug\UnityEngine.UI.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\bin\Debug\Assembly-CSharp.xml
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\bin\Debug\UnityEngine.xml
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\obj\Debug\KerbalDebug.csprojResolveAssemblyReference.cache
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\obj\Debug\KerbalDebug.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\KerbalDebug\obj\Debug\KerbalDebug.pdb

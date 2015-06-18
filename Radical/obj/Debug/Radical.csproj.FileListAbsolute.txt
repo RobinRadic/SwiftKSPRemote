@@ -1,0 +1,11 @@
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\bin\Debug\Radical.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\bin\Debug\Radical.pdb
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\bin\Debug\UnityEngine.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\bin\Debug\UnityEngine.UI.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\bin\Debug\YamlDotNet.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\bin\Debug\YamlDotNet.pdb
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\bin\Debug\YamlDotNet.xml
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\bin\Debug\UnityEngine.xml
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\obj\Debug\Radical.csprojResolveAssemblyReference.cache
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\obj\Debug\Radical.dll
+C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\Radical\obj\Debug\Radical.pdb

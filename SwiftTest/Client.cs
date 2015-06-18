@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Thrift;
 using Thrift.Protocol;
 using Thrift.Transport;
-using Thrift.Collections;
-using Thrift.Server;
-using SKRApi;
+using KerbalApi.Api;
 
 namespace SwiftTest
 {
-
     public class Client
     {
         private void Run()
@@ -29,23 +22,13 @@ namespace SwiftTest
                 TMultiplexedProtocol multiplex;
 
                 Console.WriteLine("Try connecting..");
-                multiplex = new TMultiplexedProtocol(Protocol, "SwiftKSPRemoteApiService");
-                SwiftKSPRemote.Api.SwiftKSPRemoteApiService.Iface swift = new SwiftKSPRemote.Api.SwiftKSPRemoteApiService.Client(multiplex);
+                multiplex = new TMultiplexedProtocol(Protocol, "KerbalApiService");
+                KerbalApiService.Iface swift = new KerbalApiService.Client(multiplex);
 
-                swift.ping();
+                var resp  = swift.evaluateCSCode(GetAuthString("evaluateCSCode"));
                 Console.WriteLine("Pinged");
 
-                multiplex = new TMultiplexedProtocol(Protocol, "SKRApiService");
-                SKRApiService.Iface skrApi = new SKRApiService.Client(multiplex);
-
-
-                Console.WriteLine(skrApi.add(5, 10));
-                Console.WriteLine(skrApi.vesselName());
-                Console.WriteLine(skrApi.test1());
-                Console.WriteLine(skrApi.test2());
-                skrApi.ping();
-                skrApi.zip();
-                
+                Console.WriteLine(resp);
             }
             catch (Exception e)
             {
@@ -53,12 +36,28 @@ namespace SwiftTest
             }
         }
 
-
         public static void Execute()
         {
-            Client client = new Client();
+            var client = new Client();
             client.Run();
         }
 
+        private string GetSHA256String(string data)
+        {
+
+            var sh = new System.Security.Cryptography.SHA256Managed();
+            byte[] result = sh.ComputeHash(Encoding.UTF8.GetBytes(data));
+            var sb = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                sb.Append(result[i].ToString("x2"));
+            }
+            return sb.ToString().ToLower();
+        }
+
+        public string GetAuthString(string methodName)
+        {
+            return GetSHA256String("admin" + methodName + "password" + "salter");
+        }
     }
 }
