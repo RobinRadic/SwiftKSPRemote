@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Radical.KerbalApiServer.Extensions
+namespace KerbalApiServer.Extensions
 {
     public static class KSPEx
     {

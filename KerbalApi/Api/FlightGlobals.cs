@@ -25,6 +25,9 @@ namespace KerbalApi.Api
   {
     private Vessel _activeVessel;
     private List<Vessel> _vessels;
+    private List<KerbalApi.Api.CelestialBody> _bodies;
+    private KerbalApi.Api.CelestialBody _currentMainBody;
+    private KerbalApi.Api.Part _activeTarget;
 
     public Vessel ActiveVessel
     {
@@ -52,6 +55,45 @@ namespace KerbalApi.Api
       }
     }
 
+    public List<KerbalApi.Api.CelestialBody> Bodies
+    {
+      get
+      {
+        return _bodies;
+      }
+      set
+      {
+        __isset.bodies = true;
+        this._bodies = value;
+      }
+    }
+
+    public KerbalApi.Api.CelestialBody CurrentMainBody
+    {
+      get
+      {
+        return _currentMainBody;
+      }
+      set
+      {
+        __isset.currentMainBody = true;
+        this._currentMainBody = value;
+      }
+    }
+
+    public KerbalApi.Api.Part ActiveTarget
+    {
+      get
+      {
+        return _activeTarget;
+      }
+      set
+      {
+        __isset.activeTarget = true;
+        this._activeTarget = value;
+      }
+    }
+
 
     public Isset __isset;
     #if !SILVERLIGHT
@@ -60,6 +102,9 @@ namespace KerbalApi.Api
     public struct Isset {
       public bool activeVessel;
       public bool vessels;
+      public bool bodies;
+      public bool currentMainBody;
+      public bool activeTarget;
     }
 
     public FlightGlobals() {
@@ -103,6 +148,40 @@ namespace KerbalApi.Api
               TProtocolUtil.Skip(iprot, field.Type);
             }
             break;
+          case 3:
+            if (field.Type == TType.List) {
+              {
+                Bodies = new List<KerbalApi.Api.CelestialBody>();
+                TList _list3 = iprot.ReadListBegin();
+                for( int _i4 = 0; _i4 < _list3.Count; ++_i4)
+                {
+                  KerbalApi.Api.CelestialBody _elem5;
+                  _elem5 = new KerbalApi.Api.CelestialBody();
+                  _elem5.Read(iprot);
+                  Bodies.Add(_elem5);
+                }
+                iprot.ReadListEnd();
+              }
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 4:
+            if (field.Type == TType.Struct) {
+              CurrentMainBody = new KerbalApi.Api.CelestialBody();
+              CurrentMainBody.Read(iprot);
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 30:
+            if (field.Type == TType.Struct) {
+              ActiveTarget = new KerbalApi.Api.Part();
+              ActiveTarget.Read(iprot);
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
           default: 
             TProtocolUtil.Skip(iprot, field.Type);
             break;
@@ -131,12 +210,43 @@ namespace KerbalApi.Api
         oprot.WriteFieldBegin(field);
         {
           oprot.WriteListBegin(new TList(TType.Struct, Vessels.Count));
-          foreach (Vessel _iter3 in Vessels)
+          foreach (Vessel _iter6 in Vessels)
           {
-            _iter3.Write(oprot);
+            _iter6.Write(oprot);
           }
           oprot.WriteListEnd();
         }
+        oprot.WriteFieldEnd();
+      }
+      if (Bodies != null && __isset.bodies) {
+        field.Name = "bodies";
+        field.Type = TType.List;
+        field.ID = 3;
+        oprot.WriteFieldBegin(field);
+        {
+          oprot.WriteListBegin(new TList(TType.Struct, Bodies.Count));
+          foreach (KerbalApi.Api.CelestialBody _iter7 in Bodies)
+          {
+            _iter7.Write(oprot);
+          }
+          oprot.WriteListEnd();
+        }
+        oprot.WriteFieldEnd();
+      }
+      if (CurrentMainBody != null && __isset.currentMainBody) {
+        field.Name = "currentMainBody";
+        field.Type = TType.Struct;
+        field.ID = 4;
+        oprot.WriteFieldBegin(field);
+        CurrentMainBody.Write(oprot);
+        oprot.WriteFieldEnd();
+      }
+      if (ActiveTarget != null && __isset.activeTarget) {
+        field.Name = "activeTarget";
+        field.Type = TType.Struct;
+        field.ID = 30;
+        oprot.WriteFieldBegin(field);
+        ActiveTarget.Write(oprot);
         oprot.WriteFieldEnd();
       }
       oprot.WriteFieldStop();
@@ -157,6 +267,24 @@ namespace KerbalApi.Api
         __first = false;
         __sb.Append("Vessels: ");
         __sb.Append(Vessels);
+      }
+      if (Bodies != null && __isset.bodies) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Bodies: ");
+        __sb.Append(Bodies);
+      }
+      if (CurrentMainBody != null && __isset.currentMainBody) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("CurrentMainBody: ");
+        __sb.Append(CurrentMainBody== null ? "<null>" : CurrentMainBody.ToString());
+      }
+      if (ActiveTarget != null && __isset.activeTarget) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("ActiveTarget: ");
+        __sb.Append(ActiveTarget== null ? "<null>" : ActiveTarget.ToString());
       }
       __sb.Append(")");
       return __sb.ToString();

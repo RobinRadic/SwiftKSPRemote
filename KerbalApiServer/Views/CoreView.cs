@@ -6,7 +6,7 @@ using KSP.IO;
 using UnityEngine;
 using Radical.UI;
 
-namespace Radical.KerbalApiServer.Views
+namespace KerbalApiServer.Views
 {
     using Extensions;
     public class CoreView

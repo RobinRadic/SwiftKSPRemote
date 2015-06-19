@@ -35,11 +35,11 @@ namespace Radical.KerbalDebug
                 {
                     LogExep(e);
                 }
-            }
+            }//.GetModules<MuMech.MechJebCore>()
             Debug.Log("get using" + Evaluator.GetUsing());
             var init = Evaluator.Run("using UnityEngine;\n" +
                                      "using Radical;\n" +
-                                     "using Radical.KerbalApiServer;\n" +
+                                     "using KerbalApiServer;\n" +
                                      "using KerbalApi;\n" +
                                      "using Thrift;\n" +
                                      "using Thrift.Protocol;\n" +

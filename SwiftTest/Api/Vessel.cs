@@ -23,19 +23,35 @@ namespace KerbalApi.Api
   #endif
   public partial class Vessel : TBase
   {
-    private Vector3d _position;
+    private string _id;
     private string _name;
+    private KerbalApi.Api.Vector3d _position;
+    private VesselType _type;
+    private VesselSituation _situation;
+    private Vessel _target;
+    private KerbalApi.Api.Orbit _orbit;
+    private double _MET;
+    private double _mass;
+    private double _dryMass;
+    private double _thrust;
+    private double _availableThrust;
+    private double _maxThrust;
+    private double _maxVacThrust;
+    private double _specificImpulse;
+    private double _vacuumSpecificImpulse;
+    private double _kerbinSeaLevelSpecificImpulse;
+    private KerbalApi.Api.Parts _parts;
 
-    public Vector3d Position
+    public string Id
     {
       get
       {
-        return _position;
+        return _id;
       }
       set
       {
-        __isset.position = true;
-        this._position = value;
+        __isset.id = true;
+        this._id = value;
       }
     }
 
@@ -52,14 +68,246 @@ namespace KerbalApi.Api
       }
     }
 
+    public KerbalApi.Api.Vector3d Position
+    {
+      get
+      {
+        return _position;
+      }
+      set
+      {
+        __isset.position = true;
+        this._position = value;
+      }
+    }
+
+    /// <summary>
+    /// 
+    /// <seealso cref="VesselType"/>
+    /// </summary>
+    public VesselType Type
+    {
+      get
+      {
+        return _type;
+      }
+      set
+      {
+        __isset.type = true;
+        this._type = value;
+      }
+    }
+
+    /// <summary>
+    /// 
+    /// <seealso cref="VesselSituation"/>
+    /// </summary>
+    public VesselSituation Situation
+    {
+      get
+      {
+        return _situation;
+      }
+      set
+      {
+        __isset.situation = true;
+        this._situation = value;
+      }
+    }
+
+    public Vessel Target
+    {
+      get
+      {
+        return _target;
+      }
+      set
+      {
+        __isset.target = true;
+        this._target = value;
+      }
+    }
+
+    public KerbalApi.Api.Orbit Orbit
+    {
+      get
+      {
+        return _orbit;
+      }
+      set
+      {
+        __isset.orbit = true;
+        this._orbit = value;
+      }
+    }
+
+    public double MET
+    {
+      get
+      {
+        return _MET;
+      }
+      set
+      {
+        __isset.MET = true;
+        this._MET = value;
+      }
+    }
+
+    public double Mass
+    {
+      get
+      {
+        return _mass;
+      }
+      set
+      {
+        __isset.mass = true;
+        this._mass = value;
+      }
+    }
+
+    public double DryMass
+    {
+      get
+      {
+        return _dryMass;
+      }
+      set
+      {
+        __isset.dryMass = true;
+        this._dryMass = value;
+      }
+    }
+
+    public double Thrust
+    {
+      get
+      {
+        return _thrust;
+      }
+      set
+      {
+        __isset.thrust = true;
+        this._thrust = value;
+      }
+    }
+
+    public double AvailableThrust
+    {
+      get
+      {
+        return _availableThrust;
+      }
+      set
+      {
+        __isset.availableThrust = true;
+        this._availableThrust = value;
+      }
+    }
+
+    public double MaxThrust
+    {
+      get
+      {
+        return _maxThrust;
+      }
+      set
+      {
+        __isset.maxThrust = true;
+        this._maxThrust = value;
+      }
+    }
+
+    public double MaxVacThrust
+    {
+      get
+      {
+        return _maxVacThrust;
+      }
+      set
+      {
+        __isset.maxVacThrust = true;
+        this._maxVacThrust = value;
+      }
+    }
+
+    public double SpecificImpulse
+    {
+      get
+      {
+        return _specificImpulse;
+      }
+      set
+      {
+        __isset.specificImpulse = true;
+        this._specificImpulse = value;
+      }
+    }
+
+    public double VacuumSpecificImpulse
+    {
+      get
+      {
+        return _vacuumSpecificImpulse;
+      }
+      set
+      {
+        __isset.vacuumSpecificImpulse = true;
+        this._vacuumSpecificImpulse = value;
+      }
+    }
+
+    public double KerbinSeaLevelSpecificImpulse
+    {
+      get
+      {
+        return _kerbinSeaLevelSpecificImpulse;
+      }
+      set
+      {
+        __isset.kerbinSeaLevelSpecificImpulse = true;
+        this._kerbinSeaLevelSpecificImpulse = value;
+      }
+    }
+
+    public KerbalApi.Api.Parts Parts
+    {
+      get
+      {
+        return _parts;
+      }
+      set
+      {
+        __isset.parts = true;
+        this._parts = value;
+      }
+    }
+
 
     public Isset __isset;
     #if !SILVERLIGHT
     [Serializable]
     #endif
     public struct Isset {
-      public bool position;
+      public bool id;
       public bool name;
+      public bool position;
+      public bool type;
+      public bool situation;
+      public bool target;
+      public bool orbit;
+      public bool MET;
+      public bool mass;
+      public bool dryMass;
+      public bool thrust;
+      public bool availableThrust;
+      public bool maxThrust;
+      public bool maxVacThrust;
+      public bool specificImpulse;
+      public bool vacuumSpecificImpulse;
+      public bool kerbinSeaLevelSpecificImpulse;
+      public bool parts;
     }
 
     public Vessel() {
@@ -78,9 +326,8 @@ namespace KerbalApi.Api
         switch (field.ID)
         {
           case 1:
-            if (field.Type == TType.Struct) {
-              Position = new Vector3d();
-              Position.Read(iprot);
+            if (field.Type == TType.String) {
+              Id = iprot.ReadString();
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
             }
@@ -88,6 +335,122 @@ namespace KerbalApi.Api
           case 2:
             if (field.Type == TType.String) {
               Name = iprot.ReadString();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 3:
+            if (field.Type == TType.Struct) {
+              Position = new KerbalApi.Api.Vector3d();
+              Position.Read(iprot);
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 4:
+            if (field.Type == TType.I32) {
+              Type = (VesselType)iprot.ReadI32();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 5:
+            if (field.Type == TType.I32) {
+              Situation = (VesselSituation)iprot.ReadI32();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 6:
+            if (field.Type == TType.Struct) {
+              Target = new Vessel();
+              Target.Read(iprot);
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 7:
+            if (field.Type == TType.Struct) {
+              Orbit = new KerbalApi.Api.Orbit();
+              Orbit.Read(iprot);
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 11:
+            if (field.Type == TType.Double) {
+              MET = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 12:
+            if (field.Type == TType.Double) {
+              Mass = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 13:
+            if (field.Type == TType.Double) {
+              DryMass = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 14:
+            if (field.Type == TType.Double) {
+              Thrust = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 15:
+            if (field.Type == TType.Double) {
+              AvailableThrust = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 16:
+            if (field.Type == TType.Double) {
+              MaxThrust = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 17:
+            if (field.Type == TType.Double) {
+              MaxVacThrust = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 18:
+            if (field.Type == TType.Double) {
+              SpecificImpulse = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 19:
+            if (field.Type == TType.Double) {
+              VacuumSpecificImpulse = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 20:
+            if (field.Type == TType.Double) {
+              KerbinSeaLevelSpecificImpulse = iprot.ReadDouble();
+            } else { 
+              TProtocolUtil.Skip(iprot, field.Type);
+            }
+            break;
+          case 32:
+            if (field.Type == TType.Struct) {
+              Parts = new KerbalApi.Api.Parts();
+              Parts.Read(iprot);
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
             }
@@ -105,12 +468,12 @@ namespace KerbalApi.Api
       TStruct struc = new TStruct("Vessel");
       oprot.WriteStructBegin(struc);
       TField field = new TField();
-      if (Position != null && __isset.position) {
-        field.Name = "position";
-        field.Type = TType.Struct;
+      if (Id != null && __isset.id) {
+        field.Name = "id";
+        field.Type = TType.String;
         field.ID = 1;
         oprot.WriteFieldBegin(field);
-        Position.Write(oprot);
+        oprot.WriteString(Id);
         oprot.WriteFieldEnd();
       }
       if (Name != null && __isset.name) {
@@ -121,6 +484,134 @@ namespace KerbalApi.Api
         oprot.WriteString(Name);
         oprot.WriteFieldEnd();
       }
+      if (Position != null && __isset.position) {
+        field.Name = "position";
+        field.Type = TType.Struct;
+        field.ID = 3;
+        oprot.WriteFieldBegin(field);
+        Position.Write(oprot);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.type) {
+        field.Name = "type";
+        field.Type = TType.I32;
+        field.ID = 4;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteI32((int)Type);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.situation) {
+        field.Name = "situation";
+        field.Type = TType.I32;
+        field.ID = 5;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteI32((int)Situation);
+        oprot.WriteFieldEnd();
+      }
+      if (Target != null && __isset.target) {
+        field.Name = "target";
+        field.Type = TType.Struct;
+        field.ID = 6;
+        oprot.WriteFieldBegin(field);
+        Target.Write(oprot);
+        oprot.WriteFieldEnd();
+      }
+      if (Orbit != null && __isset.orbit) {
+        field.Name = "orbit";
+        field.Type = TType.Struct;
+        field.ID = 7;
+        oprot.WriteFieldBegin(field);
+        Orbit.Write(oprot);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.MET) {
+        field.Name = "MET";
+        field.Type = TType.Double;
+        field.ID = 11;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(MET);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.mass) {
+        field.Name = "mass";
+        field.Type = TType.Double;
+        field.ID = 12;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(Mass);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.dryMass) {
+        field.Name = "dryMass";
+        field.Type = TType.Double;
+        field.ID = 13;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(DryMass);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.thrust) {
+        field.Name = "thrust";
+        field.Type = TType.Double;
+        field.ID = 14;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(Thrust);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.availableThrust) {
+        field.Name = "availableThrust";
+        field.Type = TType.Double;
+        field.ID = 15;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(AvailableThrust);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.maxThrust) {
+        field.Name = "maxThrust";
+        field.Type = TType.Double;
+        field.ID = 16;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(MaxThrust);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.maxVacThrust) {
+        field.Name = "maxVacThrust";
+        field.Type = TType.Double;
+        field.ID = 17;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(MaxVacThrust);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.specificImpulse) {
+        field.Name = "specificImpulse";
+        field.Type = TType.Double;
+        field.ID = 18;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(SpecificImpulse);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.vacuumSpecificImpulse) {
+        field.Name = "vacuumSpecificImpulse";
+        field.Type = TType.Double;
+        field.ID = 19;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(VacuumSpecificImpulse);
+        oprot.WriteFieldEnd();
+      }
+      if (__isset.kerbinSeaLevelSpecificImpulse) {
+        field.Name = "kerbinSeaLevelSpecificImpulse";
+        field.Type = TType.Double;
+        field.ID = 20;
+        oprot.WriteFieldBegin(field);
+        oprot.WriteDouble(KerbinSeaLevelSpecificImpulse);
+        oprot.WriteFieldEnd();
+      }
+      if (Parts != null && __isset.parts) {
+        field.Name = "parts";
+        field.Type = TType.Struct;
+        field.ID = 32;
+        oprot.WriteFieldBegin(field);
+        Parts.Write(oprot);
+        oprot.WriteFieldEnd();
+      }
       oprot.WriteFieldStop();
       oprot.WriteStructEnd();
     }
@@ -128,17 +619,113 @@ namespace KerbalApi.Api
     public override string ToString() {
       StringBuilder __sb = new StringBuilder("Vessel(");
       bool __first = true;
-      if (Position != null && __isset.position) {
+      if (Id != null && __isset.id) {
         if(!__first) { __sb.Append(", "); }
         __first = false;
-        __sb.Append("Position: ");
-        __sb.Append(Position== null ? "<null>" : Position.ToString());
+        __sb.Append("Id: ");
+        __sb.Append(Id);
       }
       if (Name != null && __isset.name) {
         if(!__first) { __sb.Append(", "); }
         __first = false;
         __sb.Append("Name: ");
         __sb.Append(Name);
+      }
+      if (Position != null && __isset.position) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Position: ");
+        __sb.Append(Position== null ? "<null>" : Position.ToString());
+      }
+      if (__isset.type) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Type: ");
+        __sb.Append(Type);
+      }
+      if (__isset.situation) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Situation: ");
+        __sb.Append(Situation);
+      }
+      if (Target != null && __isset.target) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Target: ");
+        __sb.Append(Target);
+      }
+      if (Orbit != null && __isset.orbit) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Orbit: ");
+        __sb.Append(Orbit== null ? "<null>" : Orbit.ToString());
+      }
+      if (__isset.MET) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("MET: ");
+        __sb.Append(MET);
+      }
+      if (__isset.mass) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Mass: ");
+        __sb.Append(Mass);
+      }
+      if (__isset.dryMass) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("DryMass: ");
+        __sb.Append(DryMass);
+      }
+      if (__isset.thrust) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Thrust: ");
+        __sb.Append(Thrust);
+      }
+      if (__isset.availableThrust) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("AvailableThrust: ");
+        __sb.Append(AvailableThrust);
+      }
+      if (__isset.maxThrust) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("MaxThrust: ");
+        __sb.Append(MaxThrust);
+      }
+      if (__isset.maxVacThrust) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("MaxVacThrust: ");
+        __sb.Append(MaxVacThrust);
+      }
+      if (__isset.specificImpulse) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("SpecificImpulse: ");
+        __sb.Append(SpecificImpulse);
+      }
+      if (__isset.vacuumSpecificImpulse) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("VacuumSpecificImpulse: ");
+        __sb.Append(VacuumSpecificImpulse);
+      }
+      if (__isset.kerbinSeaLevelSpecificImpulse) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("KerbinSeaLevelSpecificImpulse: ");
+        __sb.Append(KerbinSeaLevelSpecificImpulse);
+      }
+      if (Parts != null && __isset.parts) {
+        if(!__first) { __sb.Append(", "); }
+        __first = false;
+        __sb.Append("Parts: ");
+        __sb.Append(Parts== null ? "<null>" : Parts.ToString());
       }
       __sb.Append(")");
       return __sb.ToString();

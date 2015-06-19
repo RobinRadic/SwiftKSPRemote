@@ -5,7 +5,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using Radical.KerbalApiServer;
+using Radical;
+using KerbalApiServer;
 using UnityEngine;
 using Thrift;
 using Thrift.Protocol;
@@ -15,7 +16,7 @@ using Thrift.Server;
 
 
 
-namespace Radical.KerbalApiServer
+namespace KerbalApiServer
 {
     using Extensions;
 
@@ -105,7 +106,8 @@ namespace Radical.KerbalApiServer
                 foreach (Type apiClass in Util.FindOfAttribute(apiType))
                 {
                     Addon.Log("services loop: " + apiClass.FullName);
-                    var serviceHandler = Activator.CreateInstance(apiClass);
+                    var serviceHandler = (Handler) Activator.CreateInstance(apiClass);
+                    serviceHandler.server = this;
                     Addon.Log(serviceHandler.ToString());
                     KerbalApiAttribute[] attrs = (KerbalApiAttribute[])apiClass.GetCustomAttributes(typeof(KerbalApiAttribute), true);
 
@@ -124,16 +126,13 @@ namespace Radical.KerbalApiServer
                     }
                 }
         
+                
 
                 serverEngine = new TSimpleServer(multiplex, servertrans, TransportFactory, ProtocolFactory);
-
-                //TServer ServerEngine = new TSimpleServer(multiplex, servertrans, TransportFactory, ProtocolFactory);
-
+                
                 serverEngine.setEventHandler(events);
                 FireEvent("OnStarted");
                 serverEngine.Serve();
-
-
             }
             catch (Exception e)
             {
@@ -147,16 +146,7 @@ namespace Radical.KerbalApiServer
             }
 
         }
-        static IEnumerable<Type> GetTypesWithSKRApiAttribute(Assembly assembly)
-        {
-            foreach (Type type in assembly.GetTypes())
-            {
-                if (type.GetCustomAttributes(typeof(KerbalApiAttribute), true).Length > 0)
-                {
-                    yield return type;
-                }
-            }
-        }
+
 
         private string GetSHA256String(string data)
         {
@@ -236,6 +226,7 @@ namespace Radical.KerbalApiServer
             public object createContext(TProtocol input, TProtocol output)
             {
                 Log("cresateContext");
+                
                 server.FireEvent("OnClientConnect");
                 return new object();
             }

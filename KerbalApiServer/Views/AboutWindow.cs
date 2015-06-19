@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Radical.KerbalApiServer.Views
+namespace KerbalApiServer.Views
 {
     using Extensions;
     public static class AboutWindow

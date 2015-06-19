@@ -5,4 +5,5 @@
   &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.ComponentModel.DataAnnotations.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\radic\Desktop\KerbalCode\SwiftKSPRemote\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

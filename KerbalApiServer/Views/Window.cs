@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Radical;
 using UnityEngine;
 
-namespace Radical.KerbalApiServer.Views
+namespace KerbalApiServer.Views
 {
     static class WindowHelper
     {

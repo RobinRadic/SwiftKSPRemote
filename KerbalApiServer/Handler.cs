@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Radical.KerbalApiServer
+namespace KerbalApiServer
 {
-
-
     public abstract class Handler
     {
         private Server _server;
@@ -17,5 +15,15 @@ namespace Radical.KerbalApiServer
             set { _server = value; }
         }
 
+        protected void Authorize(string methodName, string authString)
+        {
+            string validAuthString = this.server.GetAuthString(methodName);
+            bool valid = validAuthString.Equals(authString);
+            if (!valid)
+            {
+                throw new Api.EAuthException();
+            }
+        }
+        
     }
 }

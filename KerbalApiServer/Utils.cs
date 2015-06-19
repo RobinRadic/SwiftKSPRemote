@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Radical.KerbalApiServer;
+using KerbalApiServer;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Radical.KerbalApiServer
+namespace KerbalApiServer
 {
     public static class Utils
     {

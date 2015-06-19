@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Radical;
 
-namespace Radical.KerbalApiServer
+namespace KerbalApiServer
 {
     using Extensions;
 

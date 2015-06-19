@@ -5,13 +5,28 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FF61C4EE-7AD2-4449-9F99-50721E575E6D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SwiftTest</RootNamespace>
     <AssemblyName>SwiftTest</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +37,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,36 +48,153 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SwiftTest.Starter</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ScintillaNET, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.4.0\lib\net40\ScintillaNET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Thrift, Version=0.9.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Thrift.dll</HintPath>
-    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\EAuthException.cs" />
-    <Compile Include="Api\EDataException.cs" />
-    <Compile Include="Api\EditorFacility.cs" />
-    <Compile Include="Api\ErrorCode.cs" />
-    <Compile Include="Api\FlightGlobals.cs" />
-    <Compile Include="Api\Game.cs" />
-    <Compile Include="Api\GameModes.cs" />
-    <Compile Include="Api\GameScenes.cs" />
-    <Compile Include="Api\GameStatus.cs" />
-    <Compile Include="Api\KerbalApiService.cs" />
-    <Compile Include="Api\Vector3d.cs" />
-    <Compile Include="Api\Vessel.cs" />
+    <Compile Include="Api\CelestialBody.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Decoupler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\DockingPort.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\DockingPortState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\EAuthException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\EDataException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\EditorFacility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Engine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\ErrorCode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\FlightGlobals.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Game.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\GameModes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\GameScenes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\GameService.cs" />
+    <Compile Include="Api\GameStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\LandingGear.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\LandingGearStates.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\LandingLeg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\LandingLegStates.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\LaunchClamp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Light.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Module.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Orbit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Parachute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\ParachuteState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Part.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Parts.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\PartStates.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\ReactionWheel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Sensor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\SolarPanel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\SolarPanelState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Vector3d.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\Vessel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\VesselService.cs" />
+    <Compile Include="Api\VesselSituation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Api\VesselType.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="App.cs" />
     <Compile Include="Client.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EditorExtensions.cs" />
+    <Compile Include="MechApi\MechService.cs" />
+    <Compile Include="OutputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutputForm.Designer.cs">
+      <DependentUpon>OutputForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -73,27 +207,46 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="OutputForm.resx">
+      <DependentUpon>OutputForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\icon36.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\activiteit_fietsen.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Thrift.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\YamlDotNet\YamlDotNet\YamlDotNet.csproj">
-      <Project>{bf32de1b-6276-4341-b212-f8862adbba7a}</Project>
-      <Name>YamlDotNet</Name>
+    <ProjectReference Include="..\Thrift\Thrift.csproj">
+      <Project>{499eb63c-d74c-47e8-ae48-a2fc94538e9d}</Project>
+      <Name>Thrift</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbalApiServer", "KerbalAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radical", "Radical\Radical.csproj", "{8E1C5855-BCBD-4DFF-9CF6-683CB6606730}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbalMechApi", "KerbalMechApi\KerbalMechApi.csproj", "{540309A4-C4E1-4AB7-B36F-A8F34782E783}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -146,6 +148,22 @@ Global
 		{8E1C5855-BCBD-4DFF-9CF6-683CB6606730}.Release-UnitySubset-v35|Any CPU.Build.0 = Release|Any CPU
 		{8E1C5855-BCBD-4DFF-9CF6-683CB6606730}.Release-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
 		{8E1C5855-BCBD-4DFF-9CF6-683CB6606730}.Release-Unsigned|Any CPU.Build.0 = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Debug-UnitySubset-v35|Any CPU.ActiveCfg = Debug|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Debug-UnitySubset-v35|Any CPU.Build.0 = Debug|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-Portable-Signed|Any CPU.ActiveCfg = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-Portable-Signed|Any CPU.Build.0 = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-Portable-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-Portable-Unsigned|Any CPU.Build.0 = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-Signed|Any CPU.ActiveCfg = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-Signed|Any CPU.Build.0 = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-UnitySubset-v35|Any CPU.ActiveCfg = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-UnitySubset-v35|Any CPU.Build.0 = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-Unsigned|Any CPU.ActiveCfg = Release|Any CPU
+		{540309A4-C4E1-4AB7-B36F-A8F34782E783}.Release-Unsigned|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

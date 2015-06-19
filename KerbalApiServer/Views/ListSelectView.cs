@@ -5,7 +5,7 @@ using System.Text;
 using Radical.UI;
 using UnityEngine;
 
-namespace Radical.KerbalApiServer.Views
+namespace KerbalApiServer.Views
 {
     public class ListSelectView<T> : IView
     {

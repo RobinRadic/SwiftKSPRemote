@@ -1,1 +1,5 @@
-﻿ScreenMessages.PostScreenMessage("port: ", 2f);
+﻿MuMech.MechJebCore mjcore = FlightGlobals.ActiveVessel.GetModules<MuMech.MechJebCore>()[0];
+Debug.Log(mjcore);
+
+CelestialBody mun = FlightGlobals.Bodies.Find(x => x.bodyName.Contains("Mun"));
+Debug.Log(mun);

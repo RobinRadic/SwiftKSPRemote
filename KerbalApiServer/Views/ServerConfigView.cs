@@ -1,10 +1,11 @@
 ﻿using System;
+using Radical;
 using UnityEngine;
 using Radical.UI;
 
-namespace Radical.KerbalApiServer.Views
+namespace KerbalApiServer.Views
 {
-    using Radical.KerbalApiServer.Extensions;
+    using KerbalApiServer.Extensions;
     public static class ServerConfigView
     {
         public static Action Create(Addon _addon)

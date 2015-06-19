@@ -4,7 +4,7 @@ using System.Reflection;
 
 using Thrift;
 
-namespace Radical.KerbalApiServer
+namespace KerbalApiServer
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class KerbalApiAttribute : Attribute

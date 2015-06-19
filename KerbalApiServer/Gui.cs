@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using KerbalApiServer.Views;
 using Radical;
-using Radical.KerbalApiServer.Views;
 using UnityEngine;
 
-namespace Radical.KerbalApiServer
+namespace KerbalApiServer
 {
     using Extensions;
 

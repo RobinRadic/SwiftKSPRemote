@@ -24,7 +24,7 @@ namespace KerbalApi.Api
   public partial class Game : TBase
   {
     private string _title;
-    private string _status;
+    private GameStatus _status;
     private GameScenes _startScene;
     private GameModes _mode;
     private GameScenes _loadedScene;
@@ -42,7 +42,11 @@ namespace KerbalApi.Api
       }
     }
 
-    public string Status
+    /// <summary>
+    /// 
+    /// <seealso cref="GameStatus"/>
+    /// </summary>
+    public GameStatus Status
     {
       get
       {
@@ -142,8 +146,8 @@ namespace KerbalApi.Api
             }
             break;
           case 2:
-            if (field.Type == TType.String) {
-              Status = iprot.ReadString();
+            if (field.Type == TType.I32) {
+              Status = (GameStatus)iprot.ReadI32();
             } else { 
               TProtocolUtil.Skip(iprot, field.Type);
             }
@@ -190,12 +194,12 @@ namespace KerbalApi.Api
         oprot.WriteString(Title);
         oprot.WriteFieldEnd();
       }
-      if (Status != null && __isset.status) {
+      if (__isset.status) {
         field.Name = "status";
-        field.Type = TType.String;
+        field.Type = TType.I32;
         field.ID = 2;
         oprot.WriteFieldBegin(field);
-        oprot.WriteString(Status);
+        oprot.WriteI32((int)Status);
         oprot.WriteFieldEnd();
       }
       if (__isset.startScene) {
@@ -235,7 +239,7 @@ namespace KerbalApi.Api
         __sb.Append("Title: ");
         __sb.Append(Title);
       }
-      if (Status != null && __isset.status) {
+      if (__isset.status) {
         if(!__first) { __sb.Append(", "); }
         __first = false;
         __sb.Append("Status: ");

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Radical;
 using UnityEngine;
 
-namespace Radical.KerbalApiServer.Extensions
+namespace KerbalApiServer.Extensions
 {
     public static class UnityEx
     {

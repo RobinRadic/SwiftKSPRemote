@@ -47,29 +47,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\EAuthException.cs" />
-    <Compile Include="Api\EDataException.cs" />
+    <Compile Include="Api\CelestialBody.cs" />
+    <Compile Include="Api\Decoupler.cs" />
+    <Compile Include="Api\DockingPort.cs" />
+    <Compile Include="Api\DockingPortState.cs" />
     <Compile Include="Api\EditorFacility.cs" />
-    <Compile Include="Api\ErrorCode.cs" />
+    <Compile Include="Api\Engine.cs" />
     <Compile Include="Api\FlightGlobals.cs" />
     <Compile Include="Api\Game.cs" />
     <Compile Include="Api\GameModes.cs" />
     <Compile Include="Api\GameScenes.cs" />
+    <Compile Include="Api\GameService.cs" />
     <Compile Include="Api\GameStatus.cs" />
-    <Compile Include="Api\KerbalApiService.cs" />
+    <Compile Include="Api\LandingGear.cs" />
+    <Compile Include="Api\LandingGearStates.cs" />
+    <Compile Include="Api\LandingLeg.cs" />
+    <Compile Include="Api\LandingLegStates.cs" />
+    <Compile Include="Api\LaunchClamp.cs" />
+    <Compile Include="Api\Light.cs" />
+    <Compile Include="Api\Module.cs" />
+    <Compile Include="Api\Orbit.cs" />
+    <Compile Include="Api\Parachute.cs" />
+    <Compile Include="Api\ParachuteState.cs" />
+    <Compile Include="Api\Part.cs" />
+    <Compile Include="Api\Parts.cs" />
+    <Compile Include="Api\PartStates.cs" />
+    <Compile Include="Api\ReactionWheel.cs" />
+    <Compile Include="Api\Sensor.cs" />
+    <Compile Include="Api\SolarPanel.cs" />
+    <Compile Include="Api\SolarPanelState.cs" />
     <Compile Include="Api\Vector3d.cs" />
     <Compile Include="Api\Vessel.cs" />
+    <Compile Include="Api\VesselService.cs" />
+    <Compile Include="Api\VesselSituation.cs" />
+    <Compile Include="Api\VesselType.cs" />
+    <Compile Include="Extensions\MathExtensions.cs" />
+    <Compile Include="Extensions\OrbitExtensions.cs" />
+    <Compile Include="Extensions\PartExtensions.cs" />
+    <Compile Include="VesselHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy.cs" />
-    <Compile Include="KerbalApiHandler.cs" />
+    <Compile Include="GameHandler.cs" />
     <Compile Include="KerbalApiAddon.cs" />
     <Compile Include="TransformerExtensions.cs" />
+    <Compile Include="Transformers.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Extensions\VesselExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Definitions\api.thrift" />
+    <None Include="Definitions\vessel.thrift" />
+    <None Include="Definitions\parts.thrift" />
+    <None Include="Definitions\game.thrift" />
     <None Include="PluginData\KerbalApi.version">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="KerbalApi.thrift" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KerbalApiServer\KerbalApiServer.csproj">

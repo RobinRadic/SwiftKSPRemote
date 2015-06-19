@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Radical;
 using UnityEngine;
 
-namespace Radical.KerbalApiServer
+namespace KerbalApiServer
 {
     [KSPAddonFixed(KSPAddon.Startup.MainMenu, true, typeof (Bootstrapper))]
     public class Bootstrapper : MonoBehaviour

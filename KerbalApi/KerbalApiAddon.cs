@@ -1,7 +1,7 @@
 ﻿using System;
 using KerbalApi;
 using Radical;
-using Radical.KerbalApiServer;
+using KerbalApiServer;
 using UnityEngine;
 using Object = UnityEngine.Object;
 

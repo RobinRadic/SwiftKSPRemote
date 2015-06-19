@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{540309A4-C4E1-4AB7-B36F-A8F34782E783}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KerbalMechApi</RootNamespace>
+    <AssemblyName>KerbalMechApi</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\ksp_dev\KSP_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MechJeb2">
+      <HintPath>..\..\..\..\..\..\ksp_dev\GameData\MechJeb2\Plugins\MechJeb2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\ksp_dev\KSP_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\MechService.cs" />
+    <Compile Include="KerbalMechApiAddon.cs" />
+    <Compile Include="Mecher\Main.cs" />
+    <Compile Include="Mecher\Targets.cs" />
+    <Compile Include="MechHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KerbalApiServer\KerbalApiServer.csproj">
+      <Project>{de2cd80a-7ae2-4838-bae3-17ef2696c7f6}</Project>
+      <Name>KerbalApiServer</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KerbalApi\KerbalApi.csproj">
+      <Project>{f4f412de-4aef-461f-ba74-6c1228afea3a}</Project>
+      <Name>KerbalApi</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Radical\Radical.csproj">
+      <Project>{8e1c5855-bcbd-4dff-9cf6-683cb6606730}</Project>
+      <Name>Radical</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Thrift\Thrift.csproj">
+      <Project>{499eb63c-d74c-47e8-ae48-a2fc94538e9d}</Project>
+      <Name>Thrift</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Definitions\api.thrift" />
+    <None Include="PluginData\KerbalMechApi.version">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rmdir "C:\ksp_dev\GameData\KerbalMechApi\" /S /Q
+rm "C:\ksp_dev\GameData\KerbalMechApi\" /S /Q
+mkdir "C:\ksp_dev\GameData\KerbalMechApi\"
+mkdir "C:\ksp_dev\GameData\KerbalMechApi\PluginData"
+mkdir "C:\ksp_dev\GameData\KerbalMechApi\PluginData\KerbalMechApi"
+
+xcopy PluginData "C:\ksp_dev\GameData\KerbalMechApi\PluginData\KerbalMechApi" /E
+copy KerbalMechApi.dll "C:\ksp_dev\GameData\KerbalMechApi\"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
